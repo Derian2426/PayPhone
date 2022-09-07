@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         var txt_cedula: TextView = findViewById(R.id.txt_cedula)
         var txt_telefono: TextView = findViewById(R.id.txt_telefono)
         var txt_valor: TextView = findViewById(R.id.txt_valor)
+        var valor:Float=txt_valor.text.toString().toFloat()
+        valor=valor*100
+        var intValor=valor.toInt()
         if (txt_cedula.text.toString().isEmpty() && txt_telefono.text.toString()
                 .isEmpty() && txt_valor.text.toString().isEmpty()
         ) {
@@ -41,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 txt_cedula.text.toString(),
                 "none",
                 "http://paystoreCZ.com/confirm.php",
-                100,
+                txt_valor.text.toString().toInt(),
                 90,
                 0,
                 10,

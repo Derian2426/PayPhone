@@ -23,7 +23,7 @@ class MainActivity2 : AppCompatActivity() {
         var url="https://pay.payphonetodoesposible.com/api/Sale/$id"
         var Token=bundle?.getString("TOKEN")
         var textEmail=findViewById<TextView>(R.id.txt_email)
-        var textCedula=findViewById<TextView>(R.id.txt_cedula)
+        var textCedula=findViewById<TextView>(R.id.txt_Dni)
         var textTelefono=findViewById<TextView>(R.id.txt_telefono)
         var textFecha=findViewById<TextView>(R.id.txt_fecha)
         var textTienda=findViewById<TextView>(R.id.txt_tienda)
@@ -42,12 +42,12 @@ class MainActivity2 : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                     textEmail.text=response.getString("email")
-                    //textCedula.text=response.getString("document")
-                    //textTelefono.text=response.getString("phoneNumber")
-                    //textFecha.text=response.getString("date")
-                    //textTienda.text=response.getString("storeName")
-                    //textValor.text=response.getInt("amount").toString()
-                    //textEstado.text=response.getString("transactionStatus")
+                    textCedula.text=response.getString("document")
+                    textTelefono.text=response.getString("phoneNumber")
+                    textFecha.text=response.getString("date")
+                    textTienda.text=response.getString("storeName")
+                    textValor.text=response.getInt("amount").toString()
+                    textEstado.text=response.getString("transactionStatus")
                 } catch (e: JSONException) {
                     println(e.toString())
                     Toast.makeText(
