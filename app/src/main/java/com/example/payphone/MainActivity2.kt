@@ -3,6 +3,7 @@ package com.example.payphone
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.AuthFailureError
@@ -76,5 +77,9 @@ class MainActivity2 : AppCompatActivity() {
         }catch (e:Exception){
             println(e.message.toString())
         }
+    }
+    fun btnRegresar(view:View){
+        var intent= Intent(this,MainActivity::class.java)
+        startActivity(intent)
     }
 }
